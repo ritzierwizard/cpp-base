@@ -9,7 +9,7 @@
       "command": "bash build.sh main.bin",
       "cwd": "$ZED_WORKTREE_ROOT"
     },
-    "program": "main",
+    "program": "main.bin",
     "request": "launch",
     "adapter": "CodeLLDB"
   }

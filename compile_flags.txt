@@ -1,2 +1,3 @@
 main.cpp
 -I=include/core
+-std=gnu++23

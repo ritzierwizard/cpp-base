@@ -6,36 +6,40 @@
 struct StringBuilder;
 struct String;
 
-struct StringBuilder {
-	char *data;
-	usize length;
-	usize cap;
+struct StringBuilder
+{
+    char *data;
+    usize length;
+    usize cap;
 
-	void append(char ch) {
-		if (length >= cap) {
-			cap *= 2;
-			data = (char *)realloc(data, cap);
-		}
+    void append(char ch)
+    {
+        if (length >= cap)
+        {
+            cap *= 2;
+            data = (char *)realloc(data, cap);
+        }
 
-		data[length] = ch;
-		length++;
-	}
+        data[length] = ch;
+        length++;
+    }
 
-	StringBuilder(usize capacity) {
-		data = (char *)malloc(sizeof(char) * capacity);
-		cap = capacity;
-		length = 0;
-	}
+    StringBuilder(usize capacity)
+    {
+        data = (char *)malloc(sizeof(char) * capacity);
+        cap = capacity;
+        length = 0;
+    }
 };
 
 struct String
 {
-	const char *data;
-	usize length;
+    const char *data;
+    usize length;
 
-	String(StringBuilder *sb)
-	{
-		data = sb->data;
-		length = sb->length;
-	}
+    String(StringBuilder *sb)
+    {
+        data = sb->data;
+        length = sb->length;
+    }
 };

@@ -32,7 +32,7 @@ struct String
 	const char *data;
 	size_t length;
 
-	explicit String(const StringBuilder *sb)
+	explicit String(const struct StringBuilder *sb)
 	{
 		data = sb->data;
 		length = sb->length;

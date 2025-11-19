@@ -7,6 +7,6 @@ include_directories(include)
 include_directories(include/core)
 
 add_executable(base
-        include/core/string.h
         main.cpp
+        include/core/string.h
         include/core/array.h)

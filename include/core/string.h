@@ -1,6 +1,5 @@
 #pragma once
 
-#include "type_aliases.h"
 #include <cstdlib>
 
 struct StringBuilder;
@@ -8,22 +7,22 @@ struct String;
 
 struct StringBuilder {
 	char *data;
-	usize length;
-	usize cap;
+	size_t length;
+	size_t cap;
 
 	void append(char ch) {
 		if (length >= cap) {
 			cap *= 2;
-			data = (char *)realloc(data, cap);
+			data = static_cast<char*>(realloc(data, cap));
 		}
 
 		data[length] = ch;
 		length++;
 	}
 
-	StringBuilder(usize capacity) {
-		data = (char *)malloc(sizeof(char) * capacity);
-		cap = capacity;
+	explicit StringBuilder(const size_t capacity) {
+		data   = static_cast<char*>(malloc(sizeof(char) * capacity));
+		cap    = capacity;
 		length = 0;
 	}
 };
@@ -31,9 +30,9 @@ struct StringBuilder {
 struct String
 {
 	const char *data;
-	usize length;
+	size_t length;
 
-	String(StringBuilder *sb)
+	explicit String(const StringBuilder *sb)
 	{
 		data = sb->data;
 		length = sb->length;

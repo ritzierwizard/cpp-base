@@ -4,7 +4,7 @@
 
 #ifndef BASE_ARRAY_H
 #define BASE_ARRAY_H
-#include <stdlib.h>
+#include <cstdlib>
 
 template <typename T>
 struct Array {

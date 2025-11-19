@@ -3,9 +3,6 @@
 
 #include <cstdlib>
 
-struct StringBuilder;
-struct String;
-
 struct StringBuilder {
 	char* data;
 	size_t length;

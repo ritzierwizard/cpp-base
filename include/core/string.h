@@ -35,4 +35,4 @@ struct String {
 	}
 };
 
-#endif
+#endif // BASE_STRING_H

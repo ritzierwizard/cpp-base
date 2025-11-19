@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BASE_STRING_H
+#define BASE_STRING_H
 
 #include <cstdlib>
 
@@ -10,7 +11,7 @@ struct StringBuilder {
 	size_t length;
 	size_t cap;
 
-	void append(char ch) {
+	void append(const char ch) {
 		if (length >= cap) {
 			cap *= 2;
 			data = static_cast<char*>(realloc(data, cap));
@@ -38,3 +39,5 @@ struct String
 		length = sb->length;
 	}
 };
+
+#endif
